@@ -32,9 +32,9 @@ import {
 } from './ui/popover';
 import { Icons } from './icons';
 
-import { cn, createUrl } from '../src/app/lib/utils';
+import { cn, createUrl } from '@/lib/utils';
 import { Location } from '../db/definitions';
-import { SearchParams } from '../src/app/lib/types';
+import { SearchParams } from '@/lib/types';
 
 const FormSchema = z
   .object({

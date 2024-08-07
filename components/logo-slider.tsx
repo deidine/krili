@@ -2,7 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Icons } from './icons';
-import { cn, setCSSVariable } from '../src/app/lib/utils';
+import { cn, setCSSVariable } from '@/lib/utils';
 
 type LogoData = {
   id: string;

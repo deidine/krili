@@ -1,7 +1,7 @@
 import { ReadonlyURLSearchParams } from 'next/navigation';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { siteConfig } from '../../../config/site';
+import { siteConfig } from '@/config/site';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
