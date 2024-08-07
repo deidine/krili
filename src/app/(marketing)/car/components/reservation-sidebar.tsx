@@ -1,6 +1,7 @@
 import { formatCurrency } from '@/lib/utils';
 import { ReservationForm } from '../components/reservation-form';
 import { Icons } from '@/components/icons';
+import { Location } from '@/db/definitions';
  
 interface ReservationSidebarProps {
   carSlug: string;

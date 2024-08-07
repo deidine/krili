@@ -14,8 +14,8 @@ import {
   Transmission,
   TransmissionFilters,
 } from './filters/transmission-types'; 
-import { SearchParams } from '@/src/app/lib/types';
-import { createUrl } from '@/src/app/lib/utils';
+import { SearchParams } from '@/lib/types';
+import { createUrl } from '@/lib/utils';
 export type SelectedFilters = {
   minPrice: number;
   maxPrice: number;

@@ -20,8 +20,8 @@ import {
   getTestimonials,
   testConnection,
 } from '../../../db/queries'; 
-import { SearchParams } from '../lib/types';
-import { formatCurrency } from '../lib/utils';
+import { SearchParams } from '@/lib/types';
+import { formatCurrency } from '@/lib/utils';
 
 export default function HomePage() {
   return (

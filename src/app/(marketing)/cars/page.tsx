@@ -9,8 +9,8 @@ import { Filters } from './components/filters';
 import { CarCard } from './components/car-card';
 import { MapContainer } from './components/map-container';
 import { getCars, getLocations } from '../../../../db/queries'; 
-import { SearchParams } from '../../lib/types';
-import { slugify } from '../../lib/utils';
+import { SearchParams } from '@/lib/types';
+import { slugify } from '@/lib/utils';
 
 interface CarsPageProps {
   searchParams: {

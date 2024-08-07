@@ -1,13 +1,13 @@
-#!/bin/bash
-#   bash deidine.sh
-chmod +x deidine.sh
+ 
+# chmod +x deidine.sh
 # cd C:\\Users\\DELL\\Desktop\\master_project\\formbuilder
-eval "$(ssh-agent -s)"
-ssh-add deidine 
+# eval "$(ssh-agent -s)"
+# ssh-add deidine 
 
+echo 'eval "$(ssh-agent -s)"'
+echo 'ssh-add deidine'
 
-
-
+# #!/bin/bash
 
 # TARGET_DIR="/c/Users/DELL/Desktop/master_project/formbuilder"
 

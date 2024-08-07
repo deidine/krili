@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
  
 import { SelectedFilters } from '../filters';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/src/app/lib/utils';
+import { cn } from '@//lib/utils';
 
 interface SeatingCapacityFiltersProps {
   selectedFilters: SelectedFilters;

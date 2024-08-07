@@ -9,7 +9,7 @@ import { CarDetailsButton } from './car-details-button';
 import { Separator } from '@/components/ui/separator';
 import { Icons } from '@/components/icons'; 
 import { CloudinaryImage } from '@/components/cloudinary-image';
-import { cn, formatCurrency } from '@/src/app/lib/utils';
+import { cn, formatCurrency } from '@/lib/utils';
 import { getCarBySlug } from '@/db/queries';
 
 interface CarCardProps {
