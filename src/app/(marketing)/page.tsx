@@ -32,12 +32,12 @@ export default function HomePage() {
         </div>
       </div>
       <main>
-        {/* <Hero /> */}
-        {/* <BodyStyleCarExplorer /> */}
+        <Hero />
+        <BodyStyleCarExplorer />
         <DestinationCarExplorer />
         <Features />
-        {/* <Testimonials /> */}
-        {/* <CarExplorer /> */}
+        <Testimonials />
+        <CarExplorer />
       </main>
       <SiteFooter />
     </>
