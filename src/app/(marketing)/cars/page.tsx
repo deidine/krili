@@ -1,8 +1,5 @@
 import { Suspense } from 'react';
-import {
-  CarCatalogSkeleton,
-  SearchFormSkeleton,
-} from '@/components/skeletons';
+import {CarCatalogSkeleton,SearchFormSkeleton} from '@/components/skeletons';
 import { SiteHeader } from '@/components/site-header';
 import { SearchForm } from '@/components/search-form';
 import { Filters } from './components/filters';
@@ -122,7 +119,7 @@ export default async function CarsPage({ searchParams }: CarsPageProps) {
                 ) : (
                   <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] items-stretch justify-center gap-6">
                     {filteredCars.map(({ id, slug }, index) => (
-                      <CarCard key={id} index={index} slug={slug} />
+                    <>  <CarCard key={id} index={index} slug={slug} /></>
                     ))}
                   </div>
                 )}

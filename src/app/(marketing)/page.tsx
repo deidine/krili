@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
-
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Button } from '@/components/ui/button';
@@ -19,7 +18,7 @@ import {
   getMinPriceFromCars,
   getTestimonials,
   testConnection,
-} from '../../../db/queries'; 
+} from '@/db/queries'; 
 import { SearchParams } from '@/lib/types';
 import { formatCurrency } from '@/lib/utils';
 

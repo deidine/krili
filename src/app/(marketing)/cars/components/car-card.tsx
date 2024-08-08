@@ -11,6 +11,7 @@ import { Icons } from '@/components/icons';
 import { CloudinaryImage } from '@/components/cloudinary-image';
 import { cn, formatCurrency } from '@/lib/utils';
 import { getCarBySlug } from '@/db/queries';
+import { Car } from '@/db/definitions';
 
 interface CarCardProps {
   index: number;
@@ -18,10 +19,12 @@ interface CarCardProps {
 }
 
 export async function CarCard({ index, slug }: CarCardProps) {
-  const car = await getCarBySlug(slug);
+  const car:Car = await getCarBySlug(slug);
 
   if (!car) {
-    return null;
+    console.log('Car not found');
+
+    return <h1>Car not found</h1>;
   }
 
   const {

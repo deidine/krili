@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { Slider } from './components/ui/slider';
-import { Label } from './components/ui/label';
-import { Input } from './components/ui/input';
-import { Separator } from './components/ui/separator';
+import { Slider } from '@/components/ui/slider';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
 import { SelectedFilters } from '../filters';
 
 interface PriceRangeFiltersProps {

@@ -2,10 +2,11 @@ import {  sql } from '@vercel/postgres';
 import { Testimonial, Location, Car } from '@/db/definitions';
 
 import pg from 'pg'
+import { env } from 'process';
  
 const { Client } = pg
- 
-const connectionString = "postgres://postgres:deidine@localhost:5432/krili";
+
+const connectionString = env.POSTGRES_URL;
 
 const client = new Client({ connectionString
 })
@@ -68,15 +69,16 @@ export async function getCars() {
     const data = await  client.query(`SELECT * FROM cars ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
-    console.error('Database Error:', error);
+    console.error('`SELECT * FROM cars ORDER BY name ASC` Database Error:', error);
     throw new Error('Failed to fetch cars data.');
   }
 }
 
 export async function getCarBySlug(slug: string) {
   try {
-    const data = await  client.query(`SELECT * FROM cars WHERE slug = ${slug};`);
+    const data = await  client.query(`SELECT * FROM cars WHERE slug = '${slug}';`);
     const car = data.rows[0];
+    console.log(car);
     return car;
   } catch (error) {
     console.error('Database Error:', error);
