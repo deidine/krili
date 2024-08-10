@@ -1,4 +1,3 @@
-// lib/db.ts
 import { Client } from 'pg';
 
 let client: Client | null = null;
@@ -16,6 +15,7 @@ export function getClient(): Client {
       console.log('Connected to the database');
     }).catch((err) => {
       console.error('Connection error', err.stack);
+      // client?.end()
     });
   }
 
