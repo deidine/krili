@@ -58,7 +58,7 @@ export async function getLocationBySlug(slug: string) {
   try {
      const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM locations WHERE slug = ${slug};`);
+    const data = await  client.query(`SELECT * FROM locations WHERE slug = '${slug}';`);
     const location = data.rows[0];
     return location;
   } catch (error) {

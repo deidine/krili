@@ -10,7 +10,6 @@ import { SearchParams } from '@/src/lib/types';
 import { getCarBySlug, getLocationBySlug } from '../../../db/queries';
 import { formatDates } from './lib/dates';
 import { differenceInDays } from 'date-fns';
-import { SignIn, SignedIn, SignedOut } from '@clerk/nextjs';
 
 interface ReservationPageProps {
   searchParams: {
@@ -67,12 +66,12 @@ export default async function ReservationPage({
       <div className="sticky top-0 z-30 bg-white p-5 shadow-[inset_0_-1px_0_0_#eaeaea] md:hidden">
         <div className="relative h-full">
           <div className="flex items-center justify-center">
-            <SignedOut>
+            {/* <SignedOut> */}
               <h1 className="text-base font-semibold">Request to book</h1>
-            </SignedOut>
-            <SignedIn>
+            {/* </SignedOut> */}
+            {/* <SignedIn> */}
               <h1 className="text-base font-semibold">Confirm and pay</h1>
-            </SignedIn>
+            {/* </SignedIn> */}
             <div className="absolute inset-y-auto -left-2.5">
               <NavigateBack />
             </div>
@@ -84,12 +83,12 @@ export default async function ReservationPage({
           <div className="hidden h-[160px] pb-8 md:block">
             <div className="flex h-32 items-center pb-6 pt-20">
               <div className="relative">
-                <SignedOut>
+                {/* <SignedOut> */}
                   <h1 className="text-3xl font-semibold">Request to book</h1>
-                </SignedOut>
-                <SignedIn>
+                {/* </SignedOut> */}
+                {/* <SignedIn> */}
                   <h1 className="text-3xl font-semibold">Confirm and pay</h1>
-                </SignedIn>
+                {/* </SignedIn> */}
                 <div className="absolute -left-11 top-0">
                   <NavigateBack />
                 </div>
@@ -99,14 +98,14 @@ export default async function ReservationPage({
           <div className="flex w-full flex-col-reverse md:grid md:grid-cols-[1fr_0.85fr] md:gap-x-24">
             <div className="mb-16 md:hidden">
               <Separator orientation="horizontal" decorative className="my-8" />
-              <SignedOut>
-                <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" />
-              </SignedOut>
-              <SignedIn>
+              {/* <SignedOut> */}
+                {/* <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" /> */}
+              {/* </SignedOut> */}
+              {/* <SignedIn> */}
                 <Button size="xl" className="w-full text-lg">
                   Pay
                 </Button>
-              </SignedIn>
+              {/* </SignedIn> */}
             </div>
             <div className="md:hidden">
               <div>
@@ -150,14 +149,14 @@ export default async function ReservationPage({
               </div>
               <Separator orientation="horizontal" decorative className="my-8" />
               <div className="hidden pt-4 md:block">
-                <SignedOut>
-                  <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" />
-                </SignedOut>
-                <SignedIn>
+                {/* <SignedOut> */}
+                  {/* <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" /> */}
+                {/* </SignedOut> */}
+                {/* <SignedIn> */}
                   <Button size="xl" className="w-full text-lg">
                     Pay
                   </Button>
-                </SignedIn>
+                {/* </SignedIn> */}
               </div>
             </div>
             <div className="mb-10 mt-4 normal-nums md:mb-20 md:mt-0">
