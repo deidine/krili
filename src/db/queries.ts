@@ -1,27 +1,10 @@
 import {  sql } from '@vercel/postgres';
 import { Testimonial, Location, Car } from '@/src/db/definitions';
-
-import pg from 'pg'
-import { env } from 'process';
  
-const { Client } = pg
+import { getClient } from './db';
 
-const connectionString = env.POSTGRES_URL;
-
-const client = new Client({ connectionString
-})
-export async function testConnection() {
-  try {
-    await client.connect();
-    console.log('Connected to the database');
-    const res = await client.query('SELECT NOW()');
-    console.log(res.rows[0]);
-  } catch (err: any) {
-    console.error('Connection error', err.stack);
-  } finally {
-    // await client.end();
-  }
-}
+ 
+ 
 export function seedDataSample(){
   ////////////////////////////////////////////////////////////////  this to insert the data to remote db for dumy test 
 //  (async () => {
@@ -37,6 +20,8 @@ export function seedDataSample(){
  
 export async function getTestimonials() {
   try {
+    const client = getClient();
+
     const data = await  client.query(`SELECT * FROM testimonials`);
     return data.rows;
   } catch (error) {
@@ -47,6 +32,8 @@ export async function getTestimonials() {
 
 export async function getLocations() {
   try {
+    const client = getClient();
+
     const data = await  client.query(`SELECT * FROM locations ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
@@ -57,6 +44,8 @@ export async function getLocations() {
 
 export async function getFeaturedLocations() {
   try {
+     const client = getClient();
+
     const data = await  client.query(`SELECT * FROM locations WHERE featured = true ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
@@ -67,6 +56,8 @@ export async function getFeaturedLocations() {
 
 export async function getLocationBySlug(slug: string) {
   try {
+     const client = getClient();
+
     const data = await  client.query(`SELECT * FROM locations WHERE slug = ${slug};`);
     const location = data.rows[0];
     return location;
@@ -77,6 +68,8 @@ export async function getLocationBySlug(slug: string) {
 
 export async function getCars() {
   try {
+     const client = getClient();
+
     const data = await  client.query(`SELECT * FROM cars ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
@@ -87,6 +80,8 @@ export async function getCars() {
 
 export async function getCarBySlug(slug: string) {
   try {
+    const client = getClient();
+
     const data = await  client.query(`SELECT * FROM cars WHERE slug = '${slug}';`);
     const car = data.rows[0];
     console.log(car);
@@ -98,6 +93,8 @@ export async function getCarBySlug(slug: string) {
 
 export async function getMinPriceFromCars() {
   try {
+    const client = getClient();
+
     const data = await
     //  sql<{ min_price: number }>
     client.query(`

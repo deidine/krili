@@ -16,8 +16,7 @@ import {
   getLocations,
   getFeaturedLocations,
   getMinPriceFromCars,
-  getTestimonials,
-  testConnection,
+  getTestimonials, 
 } from '@/src/db/queries'; 
 import { SearchParams } from '@/src/lib/types';
 import { formatCurrency } from '@/src/lib/utils';
@@ -43,8 +42,7 @@ export default function HomePage() {
   );
 }
 
-async function Hero() {
- await testConnection();
+async function Hero() { 
 
   const locations = await getLocations();
 
