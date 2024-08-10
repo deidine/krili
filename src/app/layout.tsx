@@ -3,7 +3,7 @@ import { Toaster } from '../components/ui/toaster';
 
 import './globals.css';
 
-import { fontSans } from '@/src/lib/fonts';
+// import { fontSans } from '@/src/lib/fonts';
 import { absoluteUrl, cn } from '@/src/lib/utils';
 import { siteConfig } from '../config/site';
 
@@ -61,7 +61,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
  
-      <html lang="en" className={fontSans.variable}>
+      <html lang="en" 
+      // className={fontSans.variable}
+      >
         <head >
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"/>
  
