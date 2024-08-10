@@ -5,7 +5,7 @@ import { SearchForm } from '@/src/components/search-form';
 import { Filters } from './components/filters';
 import { CarCard } from './components/car-card';
 import { MapContainer } from './components/map-container';
-import { getCars, getLocations } from '../../../db/queries'; 
+import { getCars, getLocations } from '../../db/queries'; 
 import { SearchParams } from '@/src/lib/types';
 import { slugify } from '@/src/lib/utils';
 

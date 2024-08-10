@@ -71,6 +71,7 @@ export async function getCars() {
      const client = getClient();
 
     const data = await  client.query(`SELECT * FROM cars ORDER BY name ASC`);
+    console.log(client ? "ok client db":"no client db")
     return data.rows;
   } catch (error) {
     console.error('`SELECT * FROM cars ORDER BY name ASC` Database Error:', error);

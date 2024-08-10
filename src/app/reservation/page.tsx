@@ -3,11 +3,11 @@ import { CloudinaryImage } from '@/src/components/cloudinary-image';
 import { Icons } from '@/src/components/icons';
 import { Button } from '@/src/components/ui/button';
 import { Separator } from '@/src/components/ui/separator';
-import { siteConfig } from '../../../config/site';
+import { siteConfig } from '../../config/site';
 import { formatCurrency } from '@/src/lib/utils';
 import { NavigateBack } from './components/navigate-back';
 import { SearchParams } from '@/src/lib/types';
-import { getCarBySlug, getLocationBySlug } from '../../../db/queries';
+import { getCarBySlug, getLocationBySlug } from '../../db/queries';
 import { formatDates } from './lib/dates';
 import { differenceInDays } from 'date-fns';
 

@@ -1,5 +1,5 @@
 import { formatCurrency } from '@/src/lib/utils';
-import { ReservationForm } from '../components/reservation-form';
+import { ReservationForm } from './reservation-form';
 import { Icons } from '@/src/components/icons';
 import { Location } from '@/src/db/definitions';
  

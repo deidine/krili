@@ -6,4 +6,5 @@ export const fontSans = FontSans({
   display: 'swap',
   weight: 'variable',
   axes: ['slnt'],
+  adjustFontFallback: false
 });
