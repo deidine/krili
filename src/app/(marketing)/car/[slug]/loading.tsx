@@ -1,4 +1,4 @@
-import { CarOverviewSkeleton, ReservationSidebarSkeleton } from "@/components/skeletons";
+import { CarOverviewSkeleton, ReservationSidebarSkeleton } from "@/src/components/skeletons";
 
  
 export default function Loading() {

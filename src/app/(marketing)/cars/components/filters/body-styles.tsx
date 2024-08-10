@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from 'react';
  
 import { SelectedFilters } from '../filters';
-import { Icons } from '@/components/icons';
-import { cn } from '@/lib/utils'; 
-import { Button } from '@/components/ui/button';
+import { Icons } from '@/src/components/icons';
+import { cn } from '@/src/lib/utils'; 
+import { Button } from '@/src/components/ui/button';
 export enum BodyStyle {
   SUV = 'suv',
   MINIVAN = 'minivan',

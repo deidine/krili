@@ -4,14 +4,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/src/components/ui/card';
 import { CarDetailsButton } from './car-details-button';
-import { Separator } from '@/components/ui/separator';
-import { Icons } from '@/components/icons'; 
-import { CloudinaryImage } from '@/components/cloudinary-image';
-import { cn, formatCurrency } from '@/lib/utils';
-import { getCarBySlug } from '@/db/queries';
-import { Car } from '@/db/definitions';
+import { Separator } from '@/src/components/ui/separator';
+import { Icons } from '@/src/components/icons'; 
+import { CloudinaryImage } from '@/src/components/cloudinary-image';
+import { cn, formatCurrency } from '@/src/lib/utils';
+import { getCarBySlug } from '@/src/db/queries';
+import { Car } from '@/src/db/definitions';
 
 interface CarCardProps {
   index: number;

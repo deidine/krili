@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Icons } from '@/components/icons';
+import { Button } from '@/src/components/ui/button';
+import { Icons } from '@/src/components/icons';
 import { useRouter } from 'next/navigation';
 
 export function NavigateBack() {

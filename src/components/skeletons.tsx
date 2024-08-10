@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { LoadingDots } from "./loading-dots";
 import { Separator } from "./ui/separator";
 import { Skeleton } from "./ui/skeleton";

@@ -2,10 +2,10 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Icons } from '@/components/icons';
-import { CounterBadge } from '@/components/counter-badge';
-import { Modal } from '@/components/modal';
+import { Button } from '@/src/components/ui/button';
+import { Icons } from '@/src/components/icons';
+import { CounterBadge } from '@/src/components/counter-badge';
+import { Modal } from '@/src/components/modal';
 import { PriceRangeFilters } from './filters/price-range';
 import { BodyStyle, BodyStyleFilters } from './filters/body-styles';
 import { EngineType, EngineTypeFilters } from './filters/engine-types';
@@ -14,8 +14,8 @@ import {
   Transmission,
   TransmissionFilters,
 } from './filters/transmission-types'; 
-import { SearchParams } from '@/lib/types';
-import { createUrl } from '@/lib/utils';
+import { SearchParams } from '@/src/lib/types';
+import { createUrl } from '@/src/lib/utils';
 export type SelectedFilters = {
   minPrice: number;
   maxPrice: number;

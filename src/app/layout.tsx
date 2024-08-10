@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { Toaster } from '../../components/ui/toaster';
+import { Toaster } from '../components/ui/toaster';
 
 import './globals.css';
 
-import { fontSans } from '@/lib/fonts';
-import { absoluteUrl, cn } from '@/lib/utils';
-import { siteConfig } from '../../config/site';
+import { fontSans } from '@/src/lib/fonts';
+import { absoluteUrl, cn } from '@/src/lib/utils';
+import { siteConfig } from '../config/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),

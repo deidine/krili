@@ -1,10 +1,10 @@
-import { SiteHeader } from '@/components/site-header';
-import { Skeleton } from '@/components/ui/skeleton';
+import { SiteHeader } from '@/src/components/site-header';
+import { Skeleton } from '@/src/components/ui/skeleton';
 import {
   CarCatalogSkeleton,
   MapSkeleton,
   SearchFormSkeleton,
-} from '@/components/skeletons';
+} from '@/src/components/skeletons';
 
 export default function Loading() {
   return (

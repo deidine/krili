@@ -1,6 +1,6 @@
-import { SiteHeader } from '@/components/site-header';
+import { SiteHeader } from '@/src/components/site-header';
 import React from 'react';
-import { SiteFooter } from '@/components/site-footer';
+import { SiteFooter } from '@/src/components/site-footer';
 interface CarLayoutProps {
   children: React.ReactNode;
 }

@@ -1,28 +1,22 @@
-// import { Client, sql } from '@vercel/postgres';
+// import { sql } from '@vercel/postgres';
 // import { Testimonial, Location, Car } from '@/db/definitions';
 
- 
-// const connectionString = "postgres://default:deidine@localhost:5432/krili";
-
-// export const client = new Client({ connectionString });
-
 // export async function testConnection() {
-//   try {
-//     await client.connect();
-//     console.log('Connected to the database');
-//     const res = await client.query('SELECT NOW()');
-//     console.log(res.rows[0]);
+//   try { 
 //   } catch (err: any) {
 //     console.error('Connection error', err.stack);
-//   } finally {
-//     await client.end();
+//   } finally { 
 //   }
 // }
 
- 
 // export async function getTestimonials() {
 //   try {
+//     // console.log('Fetching testimonials data...');
+
 //     const data = await sql<Testimonial>`SELECT * FROM testimonials`;
+
+//     // console.log('Data fetch complete.');
+
 //     return data.rows;
 //   } catch (error) {
 //     console.error('Database Error:', error);
@@ -32,7 +26,12 @@
 
 // export async function getLocations() {
 //   try {
+//     console.log('Fetching locations data...');
+
 //     const data = await sql<Location>`SELECT * FROM locations ORDER BY name ASC`;
+
+//     console.log('Data fetch location complete.');
+// console.log(data.rows)
 //     return data.rows;
 //   } catch (error) {
 //     console.error('Database Error:', error);
@@ -42,7 +41,13 @@
 
 // export async function getFeaturedLocations() {
 //   try {
-//     const data = await sql<Location>`SELECT * FROM locations WHERE featured = true ORDER BY name ASC`;
+//     console.log('Fetching featured locations data...');
+
+//     const data =
+//       await sql<Location>`SELECT * FROM locations WHERE featured = true ORDER BY name ASC`;
+
+//     // console.log('Data fetch complete.');
+
 //     return data.rows;
 //   } catch (error) {
 //     console.error('Database Error:', error);
@@ -52,8 +57,12 @@
 
 // export async function getLocationBySlug(slug: string) {
 //   try {
-//     const data = await sql<Location>`SELECT * FROM locations WHERE slug = ${slug};`;
+//     const data =
+//       await sql<Location>`SELECT * FROM locations WHERE slug = ${slug};`;
+
 //     const location = data.rows[0];
+
+//     console.log(location);
 //     return location;
 //   } catch (error) {
 //     console.error('Database Error:', error);
@@ -62,7 +71,12 @@
 
 // export async function getCars() {
 //   try {
+//     console.log('Fetching cars data...');
+
 //     const data = await sql<Car>`SELECT * FROM cars ORDER BY name ASC`;
+
+//     console.log('Data fetch complete.');
+
 //     return data.rows;
 //   } catch (error) {
 //     console.error('Database Error:', error);
@@ -73,7 +87,10 @@
 // export async function getCarBySlug(slug: string) {
 //   try {
 //     const data = await sql<Car>`SELECT * FROM cars WHERE slug = ${slug};`;
+
 //     const car = data.rows[0];
+
+//     // console.log(car);
 //     return car;
 //   } catch (error) {
 //     console.error('Database Error:', error);
@@ -87,8 +104,19 @@
 //         MIN(COALESCE(discounted_price_per_day, retail_price_per_day)) AS min_price
 //       FROM cars;
 //     `;
+
 //     return data.rows[0].min_price;
 //   } catch (error) {
 //     console.error('Database Error:', error);
 //   }
 // }
+
+
+
+
+
+
+
+
+
+

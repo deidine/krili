@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
-import {CarCatalogSkeleton,SearchFormSkeleton} from '@/components/skeletons';
-import { SiteHeader } from '@/components/site-header';
-import { SearchForm } from '@/components/search-form';
+import {CarCatalogSkeleton,SearchFormSkeleton} from '@/src/components/skeletons';
+import { SiteHeader } from '@/src/components/site-header';
+import { SearchForm } from '@/src/components/search-form';
 import { Filters } from './components/filters';
 import { CarCard } from './components/car-card';
 import { MapContainer } from './components/map-container';
-import { getCars, getLocations } from '../../../../db/queries'; 
-import { SearchParams } from '@/lib/types';
-import { slugify } from '@/lib/utils';
+import { getCars, getLocations } from '../../../db/queries'; 
+import { SearchParams } from '@/src/lib/types';
+import { slugify } from '@/src/lib/utils';
 
 interface CarsPageProps {
   searchParams: {

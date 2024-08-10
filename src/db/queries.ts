@@ -1,5 +1,5 @@
 import {  sql } from '@vercel/postgres';
-import { Testimonial, Location, Car } from '@/db/definitions';
+import { Testimonial, Location, Car } from '@/src/db/definitions';
 
 import pg from 'pg'
 import { env } from 'process';
@@ -22,7 +22,18 @@ export async function testConnection() {
     // await client.end();
   }
 }
+export function seedDataSample(){
+  ////////////////////////////////////////////////////////////////  this to insert the data to remote db for dumy test 
+//  (async () => {
+//   await seedUsers();
+//   await seedTestimonials();
+//   await seedCars();
+//   await seedLocations();
+//   await seedRentalReservations();
+//   await seedNewsletterSubscribers();
+// })();
 
+}
  
 export async function getTestimonials() {
   try {

@@ -1,5 +1,5 @@
-import { Icons } from '@/components/icons';
-import { Button } from '@/components/ui/button';
+import { Icons } from '@/src/components/icons';
+import { Button } from '@/src/components/ui/button';
 import Link from 'next/link';
  
 export default function NotFound() {

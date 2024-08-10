@@ -1,15 +1,15 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Button } from '@/components/ui/button';
-import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
-import { SearchFormSkeleton } from '@/components/skeletons';
-import { LogoSlider } from '@/components/logo-slider';
-import { Icons } from '@/components/icons';
-import { SearchForm } from '@/components/search-form';
-import { CloudinaryImage } from '@/components/cloudinary-image';
+import { ScrollArea, ScrollBar } from '@/src/components/ui/scroll-area';
+import { AspectRatio } from '@/src/components/ui/aspect-ratio';
+import { Button } from '@/src/components/ui/button';
+import { SiteHeader } from '@/src/components/site-header';
+import { SiteFooter } from '@/src/components/site-footer';
+import { SearchFormSkeleton } from '@/src/components/skeletons';
+import { LogoSlider } from '@/src/components/logo-slider';
+import { Icons } from '@/src/components/icons';
+import { SearchForm } from '@/src/components/search-form';
+import { CloudinaryImage } from '@/src/components/cloudinary-image';
 import { bodyStyles } from './cars/components/filters/body-styles';
 
 import {
@@ -18,9 +18,9 @@ import {
   getMinPriceFromCars,
   getTestimonials,
   testConnection,
-} from '@/db/queries'; 
-import { SearchParams } from '@/lib/types';
-import { formatCurrency } from '@/lib/utils';
+} from '@/src/db/queries'; 
+import { SearchParams } from '@/src/lib/types';
+import { formatCurrency } from '@/src/lib/utils';
 
 export default function HomePage() {
   return (

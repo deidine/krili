@@ -267,11 +267,19 @@ async function seedRentalReservations() {
   }
 }
 
-(async () => {
-  await seedUsers();
-  await seedTestimonials();
-  await seedCars();
-  await seedLocations();
-  await seedRentalReservations();
-  await seedNewsletterSubscribers();
-})();
+// (async () => {
+//   await seedUsers();
+//   await seedTestimonials();
+//   await seedCars();
+//   await seedLocations();
+//   await seedRentalReservations();
+//   await seedNewsletterSubscribers();
+// })();
+export{
+   seedUsers,
+  seedTestimonials
+  , seedCars
+  , seedLocations
+  , seedRentalReservations
+  , seedNewsletterSubscribers
+}

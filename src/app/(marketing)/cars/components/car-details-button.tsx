@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { SearchParams } from '@/lib/types';
-import { createUrl } from '@/lib/utils';
+import { Button } from '@/src/components/ui/button';
+import { SearchParams } from '@/src/lib/types';
+import { createUrl } from '@/src/lib/utils';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';  
 

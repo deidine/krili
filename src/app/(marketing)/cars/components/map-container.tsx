@@ -1,5 +1,5 @@
-import { MapSkeleton } from '@/components/skeletons';
-import { getLocations } from '@/db/queries';
+import { MapSkeleton } from '@/src/components/skeletons';
+import { getLocations } from '@/src/db/queries';
 import dynamic from 'next/dynamic'; 
 
 const DynamicMap = dynamic(

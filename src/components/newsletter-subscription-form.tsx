@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Icons } from './icons';
 import { subscribeToNewsletter } from '../db/actions';
-import { cn } from '@/lib/utils';
+import { cn } from '@/src/lib/utils';
 
 function SubmitButton() {
   const { pending } = useFormStatus();

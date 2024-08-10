@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { CloudinaryImage } from '@/components/cloudinary-image';
+import { CloudinaryImage } from '@/src/components/cloudinary-image';
 import { ReservationSidebar } from '../components/reservation-sidebar';
-import { getCarBySlug, getCars, getLocations } from '@/db/queries';
-import { Icons } from '@/components/icons';
-import { Separator } from '@/components/ui/separator';
+import { getCarBySlug, getCars, getLocations } from '@/src/db/queries';
+import { Icons } from '@/src/components/icons';
+import { Separator } from '@/src/components/ui/separator';
 
 interface CarPageProps {
   params: { slug: string };
