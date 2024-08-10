@@ -151,7 +151,7 @@ async function DestinationCarExplorer() {
     <section className="pt-10">
       <div className="mx-auto w-full max-w-none px-5 sm:max-w-[90%] sm:px-0 2xl:max-w-8xl">
         <h2 className="text-2xl font-bold">
-          Renting Trends: Must-Visit Places
+          Renting Trends: Must-Visit Places 
         </h2>
         <div className="group -mx-2 mt-8 grid grid-cols-1 items-center justify-between sm:grid-cols-2 md:grid-cols-4 [&_a:hover_img]:!opacity-100">
           {featuredLocations.map(({ id, slug, image_url, name }) => (
