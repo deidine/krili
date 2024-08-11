@@ -8,6 +8,7 @@ import { MapContainer } from './components/map-container';
 import { getCars, getLocations } from '../../db/queries'; 
 import { SearchParams } from '@/src/lib/types';
 import { slugify } from '@/src/lib/utils';
+import { Car } from '@/src/db/definitions';
 
 interface CarsPageProps {
   searchParams: {
@@ -23,7 +24,7 @@ interface CarsPageProps {
 export default async function CarsPage({ searchParams }: CarsPageProps) {
   const [cars, locations] = await Promise.all([getCars(), getLocations()]);
 
-  const carPrices = cars.map((car) => {
+  const carPrices = cars.map((car:Car) => {
     return car.discounted_price_per_day || car.retail_price_per_day;
   });
 
@@ -42,36 +43,36 @@ export default async function CarsPage({ searchParams }: CarsPageProps) {
   } = searchParams;
 
   if (minPrice) {
-    filteredCars = filteredCars.filter((car) => {
+    filteredCars = filteredCars.filter((car:Car) => {
       const currentPrice =
         car.discounted_price_per_day || car.retail_price_per_day;
       return currentPrice >= Number(minPrice);
     });
   }
   if (maxPrice) {
-    filteredCars = filteredCars.filter((car) => {
+    filteredCars = filteredCars.filter((car:Car) => {
       const currentPrice =
         car.discounted_price_per_day || car.retail_price_per_day;
       return currentPrice <= Number(maxPrice);
     });
   }
   if (bodyStyles) {
-    filteredCars = filteredCars.filter((car) =>
+    filteredCars = filteredCars.filter((car:Car) =>
       bodyStyles.includes(slugify(car.body_style)),
     );
   }
   if (engineTypes) {
-    filteredCars = filteredCars.filter((car) =>
+    filteredCars = filteredCars.filter((car:Car) =>
       engineTypes.includes(slugify(car.engine_type)),
     );
   }
   if (transmissions) {
-    filteredCars = filteredCars.filter((car) =>
+    filteredCars = filteredCars.filter((car:Car) =>
       transmissions.includes(slugify(car.transmission)),
     );
   }
   if (minSeats) {
-    filteredCars = filteredCars.filter((car) => car.seats >= Number(minSeats));
+    filteredCars = filteredCars.filter((car:Car) => car.seats >= Number(minSeats));
   }
 
   return (
@@ -118,8 +119,8 @@ export default async function CarsPage({ searchParams }: CarsPageProps) {
                   </div>
                 ) : (
                   <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] items-stretch justify-center gap-6">
-                    {filteredCars.map(({ id, slug }, index) => (
-                    <>  <CarCard key={id} index={index} slug={slug} /></>
+                    {filteredCars.map((car:Car, index:number) => (
+                    <>  <CarCard key={car.id} index={index} slug={car.slug} /></>
                     ))}
                   </div>
                 )}
