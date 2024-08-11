@@ -20,6 +20,7 @@ import {
 } from '@/src/db/queries'; 
 import { SearchParams } from '@/src/lib/types';
 import { formatCurrency } from '@/src/lib/utils';
+import { Location, Testimonial } from '../db/definitions';
 
 export default function HomePage() {
   return (
@@ -152,13 +153,13 @@ async function DestinationCarExplorer() {
           Renting Trends: Must-Visit Places 
         </h2>
         <div className="group -mx-2 mt-8 grid grid-cols-1 items-center justify-between sm:grid-cols-2 md:grid-cols-4 [&_a:hover_img]:!opacity-100">
-          {featuredLocations.map(({ id, slug, image_url, name }) => (
+          {featuredLocations.map(( item:Location) => (
             <Link
-              key={id}
+              key={item.id}
               href={{
                 pathname: '/cars',
                 query: {
-                  [SearchParams.LOCATION]: slug,
+                  [SearchParams.LOCATION]: item.slug,
                 },
               }}
               className="px-1.5 pb-4 pt-1"
@@ -166,8 +167,8 @@ async function DestinationCarExplorer() {
               <div className="size-full group-hover:[&_img]:opacity-50">
                 <AspectRatio ratio={1 / 1}>
                   <CloudinaryImage
-                    src={image_url}
-                    alt={name}
+                    src={item.image_url}
+                    alt={item.name}
                     fill
                     sizes="(max-width: 549px) 100vw, (max-width: 1127px) 50vw, 25vw"
                     className="size-full rounded-2xl border object-cover object-center transition-opacity duration-150"
@@ -175,7 +176,7 @@ async function DestinationCarExplorer() {
                 </AspectRatio>
               </div>
               <div className="mt-3">
-                <h3 className="text-[15px] font-semibold">{name}</h3>
+                <h3 className="text-[15px] font-semibold">{item.name}</h3>
                 {minPrice && (
                   <p className="mt-1 text-sm text-neutral-600">
                     Cars from {formatCurrency(minPrice, currency)}+
@@ -244,7 +245,7 @@ async function Testimonials() {
       <div className="mx-auto max-w-none px-5 sm:max-w-[90%] sm:px-0 2xl:max-w-8xl">
         <h2 className="text-center text-2xl font-bold">Driven by Feedback</h2>
         <div className="mt-4 columns-1 sm:columns-2 lg:columns-4">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial:Testimonial) => (
             <div key={testimonial.id} className="pt-4">
               <figure className="rounded-2xl bg-neutral-50 p-8">
                 <blockquote className="text-sm leading-6 text-neutral-700">
