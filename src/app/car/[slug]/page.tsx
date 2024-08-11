@@ -6,6 +6,7 @@ import { ReservationSidebar } from '../components/reservation-sidebar';
 import { getCarBySlug, getCars, getLocations } from '@/src/db/queries';
 import { Icons } from '@/src/components/icons';
 import { Separator } from '@/src/components/ui/separator';
+import { Car } from '@/src/db/definitions';
 
 interface CarPageProps {
   params: { slug: string };
@@ -32,7 +33,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const cars = await getCars();
-  return cars.map((car) => ({ slug: car.slug }));
+  return cars.map((car:Car) => ({ slug: car.slug }));
 }
 
 export default async function CarPage({ params }: CarPageProps) {
