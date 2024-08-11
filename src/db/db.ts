@@ -19,5 +19,5 @@ export function getClient(): Client {
     });
   }
 
-  return client;
+  return client; 
 }
