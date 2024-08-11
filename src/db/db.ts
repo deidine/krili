@@ -2,7 +2,7 @@ import { Client } from 'pg';
 
 let client: Client | null = null;
 
-export function getClient(): Client {
+export async function getClient(): Promise<Client> {
   if (!client) {
     client = new Client({
       connectionString: process.env.POSTGRES_URL,
@@ -11,13 +11,16 @@ export function getClient(): Client {
       },
     });
 
-    client.connect().then(() => {
+    try {
+      await client.connect();
       console.log('Connected to the database');
-    }).catch((err) => {
+    } catch (err:any) {
       console.error('Connection error', err.stack);
-      // client?.end()
-    });
+      // Proper cleanup if connection fails
+      client = null;
+      throw new Error('Failed to connect to the database');
+    }
   }
 
-  return client; 
+  return client;
 }
