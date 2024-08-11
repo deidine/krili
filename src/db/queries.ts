@@ -22,7 +22,7 @@ export async function getTestimonials() {
   try {
     const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM testimonials`);
+    const data = await  (await client).query(`SELECT * FROM testimonials`);
     return data.rows;
   } catch (error) {
     console.error('Database Error:', error);
@@ -34,7 +34,7 @@ export async function getLocations() {
   try {
     const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM locations ORDER BY name ASC`);
+    const data = await  (await client).query(`SELECT * FROM locations ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
     console.error('Database Error:', error);
@@ -46,7 +46,7 @@ export async function getFeaturedLocations() {
   try {
      const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM locations WHERE featured = true ORDER BY name ASC`);
+    const data = await  (await client).query(`SELECT * FROM locations WHERE featured = true ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
     console.error('Database Error:', error);
@@ -58,7 +58,7 @@ export async function getLocationBySlug(slug: string) {
   try {
      const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM locations WHERE slug = '${slug}';`);
+    const data = await  (await client).query(`SELECT * FROM locations WHERE slug = '${slug}';`);
     const location = data.rows[0];
     return location;
   } catch (error) {
@@ -70,8 +70,7 @@ export async function getCars() {
   try {
      const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM cars ORDER BY name ASC`);
-    console.log(client ? "ok client db":"no client db")
+    const data = await  (await client).query(`SELECT * FROM cars ORDER BY name ASC`);
     return data.rows;
   } catch (error) {
     console.error('`SELECT * FROM cars ORDER BY name ASC` Database Error:', error);
@@ -83,7 +82,7 @@ export async function getCarBySlug(slug: string) {
   try {
     const client = getClient();
 
-    const data = await  client.query(`SELECT * FROM cars WHERE slug = '${slug}';`);
+    const data = await  (await client).query(`SELECT * FROM cars WHERE slug = '${slug}';`);
     const car = data.rows[0];
     console.log(car);
     return car;
@@ -98,7 +97,7 @@ export async function getMinPriceFromCars() {
 
     const data = await
     //  sql<{ min_price: number }>
-    client.query(`
+    (await client).query(`
       SELECT 
         MIN(COALESCE(discounted_price_per_day, retail_price_per_day)) AS min_price
       FROM cars;
