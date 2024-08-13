@@ -3,17 +3,16 @@ import React from "react";
 import { Car } from "@/src/db/definitions";
 import { getCars } from "@/src/db/adminQueries/cars/adminQueries";
 import ViewCar from "./viewCar";
+import { DeleteCar } from "./components/DeleteCar";
 
 export default async function page() {
-  const [cars] = await Promise.all([getCars()]);
-  // itelegnse emotinetionnel
+  const [cars] = await Promise.all([getCars()]); 
   return (
     <section className="container mx-auto p-6 font-mono">
       <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
         <div className="w-full overflow-x-auto">
           <table className="w-full">
-            <thead>
-              {" "}
+            <thead> 
               <tr>
                 <th className="px-4 py-3">{cars.fields[2].name}</th>
                 <th className="px-4 py-3">{cars.fields[3].name}</th>
@@ -32,7 +31,7 @@ export default async function page() {
                   <td className="px-4 py-3 border">{car.reviews} </td>
                   <td className="px-4 py-3 border">{car.seats} </td>
                   <td className="px-4 py-3 border">
-                  <button className="text-red-500">Delete</button>
+                    <DeleteCar id={car.id}/>
                   <ViewCar index={index} car={car} />                   
                    </td> 
                 </tr>
@@ -44,3 +43,4 @@ export default async function page() {
     </section>
   );
 }
+ 

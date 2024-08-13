@@ -13,9 +13,7 @@ export default function ViewCar({ index, car }: { index: number; car: Car }) {
     setIsModalOpen((prevState) => !prevState);
   }
 
-//   React.useCallback(() => {
-//     setIsModalOpen((prevState) => !prevState);
-//   }, []);
+ 
   return (
     <div>
       <Modal
@@ -30,7 +28,7 @@ export default function ViewCar({ index, car }: { index: number; car: Car }) {
             <span>View</span>
           </Button>
         }
-        title="Filters"
+        title="View car"
         footer={
           <div className="flex w-full items-center justify-between gap-x-2">
            

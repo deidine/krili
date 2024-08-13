@@ -11,3 +11,15 @@ export async function getCars() {
       throw new Error('Failed to fetch cars data.');
     }
   }
+
+  export async function deleteCar(id: number) {
+    try {
+       const client = getClient();
+  
+      const data = await  (await client).query(`DELETE FROM cars WHERE id = ${id}`);
+      return data ;
+    } catch (error) {
+      console.error('`DELETE FROM cars WHERE id = ${id}` Database Error:', error);
+      throw new Error('Failed to fetch cars data.');
+    }
+  }
